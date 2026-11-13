@@ -1,7 +1,7 @@
 /*
  * Project Name: Address Book Application
- * Use Case: Section 2 - UC1
- * Description: Converts AddressBookDTO objects into Model objects and vice versa.
+ * Use Case: Section 2 - UC3
+ * Description: Converts AddressBook Model objects into DTOs and DTOs into Models.
  * Name: Utakarsh Jain
  * Date: 13/11/2026
  */
@@ -27,10 +27,15 @@ public class AddressBookMapper {
     // Convert Model into DTO
     public static AddressBookDTO toDTO(AddressBook model) {
 
-        return new AddressBookDTO(
+        AddressBookDTO dto = new AddressBookDTO(
                 model.getFirstName(),
                 model.getLastName(),
                 model.getPhoneNumber()
         );
+
+        // Include contact ID in API response
+        dto.setId(model.getId());
+
+        return dto;
     }
 }

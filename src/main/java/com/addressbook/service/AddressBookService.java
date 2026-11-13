@@ -1,7 +1,7 @@
 /*
  * Project Name: Address Book Application
- * Use Case: Section 2 - UC2
- * Description: Defines service operations for managing AddressBook contacts.
+ * Use Case: Section 2 - UC3
+ * Description: Defines operations for managing contacts in the Address Book.
  * Name: Utakarsh Jain
  * Date: 13/11/2026
  */
@@ -17,15 +17,15 @@ public interface AddressBookService {
     // Retrieve all contacts
     List<AddressBookDTO> getAllContacts();
 
-    // Retrieve a contact using its ID
+    // Retrieve a contact using ID
     AddressBookDTO getContactById(int id);
 
-    // Create a new contact
+    // Add a new contact
     AddressBookDTO createContact(AddressBookDTO dto);
 
     // Update an existing contact
     AddressBookDTO updateContact(int id, AddressBookDTO dto);
 
-    // Delete a contact using its ID
+    // Delete a contact using ID
     String deleteContact(int id);
 }
